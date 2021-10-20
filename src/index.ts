@@ -1,7 +1,9 @@
 // const express = require('express')
 import * as express from 'express'
+
 import {Request, Response} from 'express'
 
+const cors = require('cors')
 const app = express()
 
 const port = 3000
@@ -55,7 +57,11 @@ const initialState = {
     ],
   };
 
+const corsOptions = {
+	origin: 'https://domain.com',
+}
 
+app.use(cors())
 
 // app.get('/', (req, res) => {
 //     res.send('hello worls')
